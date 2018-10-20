@@ -1,0 +1,116 @@
+*preboil.txt*   Start a new parameterized document flawlessly.
+*preboil*
+
+                         ___  ___  _______  ____  ______
+                        / _ \/ _ \/ __/ _ )/ __ \/  _/ /
+                       / ___/ , _/ _// _  / /_/ // // /__
+                      /_/  /_/|_/___/____/\____/___/____/
+
+                                             by EightSQ
+
+>
+    If you encounter an issue or have a feature request,
+    please open an issue on GitHub.
+<
+================================================================================
+CONTENTS                                                      *preboil-contents*
+
+    INTRO ........................................ |preboil-intro|
+    USAGE ........................................ |preboil-usage|
+    COMMANDS ..................................... |preboil-commands|
+
+================================================================================
+INTRO                                                            *preboil-intro*
+
+    Preboil provides a simple command to open a new buffer based on a
+    template, replacing placeholders with given arguments.
+
+    Once upon a time I got annoyed on having to do these things manually
+    every time I create a new LaTeX source file for another assignment
+    solution.
+
+================================================================================
+USAGE                                                            *preboil-usage*
+
+--------------------------------------------------------------------------------
+CONFIGURATION                                            *preboil-configuration*
+
+In your .vimrc set the *g:preboil_template_directory* variable to point
+to your template directory.
+
+E.g.
+
+>
+    let g:preboil_template_directory = "~/path/to/your/Templates"
+<
+
+The default value of *g:preboil_template_directory* is "~/Templates".
+
+--------------------------------------------------------------------------------
+
+You can start creating new templated buffers with
+
+>
+    :Boil {template} {new-buffername} {par0} {par1} ...
+<
+
+See |preboil-boil|
+
+Implement placeholders like #PAR0, #PAR2 and so on in your templates,
+as they will be replaced with your given arguments during the creation
+process. For example create a LaTeX template like
+
+>
+    \documentclass{article}
+
+        [...]
+
+    \title{Series #PAR0: Solution for Assignment #PAR1}
+
+        [...]
+<
+
+================================================================================
+COMMANDS                                                      *preboil-commands*
+
+--------------------------------------------------------------------------------
+                                                                  *preboil-boil*
+The *:Boil* command.
+
+>
+    :Boil {template_name} {buffer_name} {par0} {par1} ...
+<
+
+{template_name} is the name of the template file which is stored in your
+template directory (see |preboil-usage|).
+
+{buffer_name} is the name you want to give the buffer to be created.
+
+The {parX} arguments can be numbers or coherend words, which will replace the
+#PARX tokens in your template content accordingly.
+
+================================================================================
+ABOUT                                                             *preboil-about*
+
+Preboil is maintained by
+
+    EightSQ (GitHub: EightSQ)
+
+Find the latest version at
+
+    https://github.com/EightSQ/vim-preboil
+
+================================================================================
+CHANGELOG	                                                 *preboil-changelog*
+
+v0.1 (10/20/2018)
+- first version
+
+================================================================================
+LICENSE                                                        *preboil-license*
+
+Preboil is released under the MIT license.
+See https://github.com/EightSQ/vim-preboil/blob/master/LICENSE
+
+================================================================================
+vim: tw=80
