@@ -34,8 +34,9 @@ USAGE                                                            *preboil-usage*
 
 --------------------------------------------------------------------------------
 CONFIGURATION                                            *preboil-configuration*
+                                                  *g:preboil_template_directory*
 
-In your .vimrc set the *g:preboil_template_directory* variable to point
+In your .vimrc set the g:preboil_template_directory variable to point
 to your template directory.
 
 E.g.
@@ -44,7 +45,7 @@ E.g.
     let g:preboil_template_directory = "~/path/to/your/Templates"
 <
 
-The default value of *g:preboil_template_directory* is "~/Templates".
+The default value of g:preboil_template_directory is "~/Templates".
 
 --------------------------------------------------------------------------------
 
@@ -101,7 +102,7 @@ Find the latest version at
     https://github.com/EightSQ/vim-preboil
 
 ================================================================================
-CHANGELOG	                                                 *preboil-changelog*
+CHANGELOG                                                     *preboil-changelog*
 
 v0.1 (10/20/2018)
 - first version
